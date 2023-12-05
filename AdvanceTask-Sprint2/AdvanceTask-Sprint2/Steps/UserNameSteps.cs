@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AdvanceTask_Sprint2.AssertHelpers;
+using MongoDB.Bson.Serialization.IdGenerators;
 
 namespace AdvanceTask_Sprint2.Steps
 {
@@ -15,29 +16,25 @@ namespace AdvanceTask_Sprint2.Steps
         ProfileUserNameComponent ProfileUserNameComponentObj;
         ProfileTabPageSteps profileTabPageStepsObj;
         UserNameAssertion UserNameAssertionObj;
-
         public UserNameSteps()
         {
             ProfileUserNameComponentObj = new ProfileUserNameComponent();
             profileTabPageStepsObj = new ProfileTabPageSteps();
             UserNameAssertionObj = new UserNameAssertion();
-
         }
-        public void addUserName()
+        public void addUserName(string UserFirtLastNameJsonPath)
         {
-
-            List<UserNameModel> UserNameModelList = JsonHelper.ReadTestDataFromJson<UserNameModel>("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTask-Sprint2\\JsonDataFiles\\UserFirstLastName.json");
+            List<UserNameModel> UserNameModelList = JsonHelper.ReadTestDataFromJson<UserNameModel>(UserFirtLastNameJsonPath);
             foreach (UserNameModel username in UserNameModelList)
             {
                 profileTabPageStepsObj.clickProfileUserNameButton();
                 ProfileUserNameComponentObj.AddFirstLastName(username);
                 UserNameAssertionObj.AssertFirstName(username);
-
             }
         }
-        public void AddAvailabilityTime()
+        public void AddAvailabilityTime(string AvailabilityJsonPath)
         {
-            List<UserNameModel> AvailabilityModelList = JsonHelper.ReadTestDataFromJson<UserNameModel>("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTask-Sprint2\\JsonDataFiles\\Availability.json");
+            List<UserNameModel> AvailabilityModelList = JsonHelper.ReadTestDataFromJson<UserNameModel>(AvailabilityJsonPath);
             foreach (UserNameModel availability in AvailabilityModelList)
             {
                 profileTabPageStepsObj.clickAvailabilityTimePencilIcon();
@@ -46,9 +43,9 @@ namespace AdvanceTask_Sprint2.Steps
                 Console.WriteLine(actualmessage);
             }
         }
-        public void AddHoursWeek()
+        public void AddHoursWeek(string AddHoursJsonPath)
         {
-            List<UserNameModel> HoursModelList = JsonHelper.ReadTestDataFromJson<UserNameModel>("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTask-Sprint2\\JsonDataFiles\\AddHours.json");
+            List<UserNameModel> HoursModelList = JsonHelper.ReadTestDataFromJson<UserNameModel>(AddHoursJsonPath);
             foreach (UserNameModel hours in HoursModelList)
             {
                 profileTabPageStepsObj.clickHoursPenilIcon();
@@ -57,9 +54,9 @@ namespace AdvanceTask_Sprint2.Steps
                 Console.WriteLine(actualmessage);
             }
         }
-        public void AddEarnTarget()
+        public void AddEarnTarget(string AddTargetJsonPath)
         {
-            List<UserNameModel> TargetModelList = JsonHelper.ReadTestDataFromJson<UserNameModel>("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTask-Sprint2\\JsonDataFiles\\AddTarget.json");
+            List<UserNameModel> TargetModelList = JsonHelper.ReadTestDataFromJson<UserNameModel>(AddTargetJsonPath);
             foreach (UserNameModel target in TargetModelList)
             {
                 profileTabPageStepsObj.clickTargetPencilIcon();

@@ -18,7 +18,6 @@ namespace AdvanceTask_Sprint2.Steps
 
             profilePageTabsComponents = new ProfilePageTabsComponents();
         }
-
         public void clickLangaugesTab()
         {
             profilePageTabsComponents.clickLangaugesTab();
@@ -51,7 +50,6 @@ namespace AdvanceTask_Sprint2.Steps
         {
             profilePageTabsComponents.clickShareSkillButton();
         }
-
         public void clickUpdateShareSkillIcon()
         {
             profilePageTabsComponents.clickupdateShareSkill();

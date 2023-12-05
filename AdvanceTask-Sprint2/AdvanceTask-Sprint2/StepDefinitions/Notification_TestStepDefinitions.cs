@@ -10,26 +10,21 @@ namespace AdvanceTask_Sprint2.StepDefinitions
 {
     [Binding]
     public class Notification_TestStepDefinitions : BaseSetup
-    {
-        SignIn SignInObj;
+    {      
         NotificationSteps NotificationStepsObj;
-        LoginPage LoginPageObj;
         ProfileTabPageSteps profileTabPageStepsObj;
         NotificationsComponents NotificationsComponentsObj;
-
         public Notification_TestStepDefinitions()
-        {
-            SignInObj = new SignIn();
+        {         
             NotificationStepsObj = new NotificationSteps();
             profileTabPageStepsObj = new ProfileTabPageSteps();
-            LoginPageObj = new LoginPage();
             NotificationsComponentsObj = new NotificationsComponents();
         }
         [When(@"User clicks on Notification menu tab")]
         public void WhenUserClicksOnNotificationMenuTab()
         {
             profileTabPageStepsObj.clickNotificationmenu();
-            Thread.Sleep(5000);
+            Thread.Sleep(2000);
         }
 
         [Then(@"User verify See All button")]
@@ -42,7 +37,7 @@ namespace AdvanceTask_Sprint2.StepDefinitions
         public void WhenUserSelectsTheDashboardTabOnProfilePage()
         {
             profileTabPageStepsObj.clickonDashboard();
-            Thread.Sleep(5000);
+            Thread.Sleep(2000);
         }
 
         [Then(@"User verify Load More button on Dashboard Page")]

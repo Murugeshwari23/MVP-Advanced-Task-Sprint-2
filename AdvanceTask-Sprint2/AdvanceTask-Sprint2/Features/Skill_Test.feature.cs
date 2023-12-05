@@ -112,11 +112,19 @@ await testRunner.WhenAsync("User deletes all the skill records", ((string)(null)
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("02 - Add new Skill")]
         [NUnit.Framework.CategoryAttribute("order2")]
-        public async System.Threading.Tasks.Task _02_AddNewSkill()
+        [NUnit.Framework.TestCaseAttribute("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTa" +
+            "sk-Sprint2\\JsonDataFiles\\AddSkill.json", null)]
+        public async System.Threading.Tasks.Task _02_AddNewSkill(string addJsonFilePath, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "order2"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("AddJsonFilePath", addJsonFilePath);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("02 - Add new Skill", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 14
 this.ScenarioInitialize(scenarioInfo);
@@ -138,7 +146,7 @@ await testRunner.AndAsync("User navigates to Profile page", ((string)(null)), ((
 await testRunner.AndAsync("User selects the Skill tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 18
-await testRunner.WhenAsync("User adds a new Skill record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+await testRunner.WhenAsync(string.Format("User adds a new Skill record with data \"{0}\"", addJsonFilePath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 19
 await testRunner.ThenAsync("User should see a success message confirming the adding skill", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -150,13 +158,21 @@ await testRunner.ThenAsync("User should see a success message confirming the add
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("03 - Updating a Skill")]
         [NUnit.Framework.CategoryAttribute("order3")]
-        public async System.Threading.Tasks.Task _03_UpdatingASkill()
+        [NUnit.Framework.TestCaseAttribute("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTa" +
+            "sk-Sprint2\\JsonDataFiles\\UpdateSkill.json", null)]
+        public async System.Threading.Tasks.Task _03_UpdatingASkill(string updateJsonFilePath, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "order3"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("UpdateJsonFilePath", updateJsonFilePath);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("03 - Updating a Skill", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 22
+#line 25
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -166,19 +182,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 23
+#line 26
 await testRunner.GivenAsync("User logs into Mars portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 24
+#line 27
 await testRunner.AndAsync("User navigates to Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 25
+#line 28
 await testRunner.AndAsync("User selects the Skill tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 26
-await testRunner.WhenAsync("User updates a Skill record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 29
+await testRunner.WhenAsync(string.Format("User updates a Skill record  with data \"{0}\"", updateJsonFilePath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 27
+#line 30
 await testRunner.ThenAsync("User should see a success message confirming the updating skill", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -188,13 +204,21 @@ await testRunner.ThenAsync("User should see a success message confirming the upd
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("04 - Deleting a Skill")]
         [NUnit.Framework.CategoryAttribute("order4")]
-        public async System.Threading.Tasks.Task _04_DeletingASkill()
+        [NUnit.Framework.TestCaseAttribute("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTa" +
+            "sk-Sprint2\\JsonDataFiles\\DeleteSkill.json", null)]
+        public async System.Threading.Tasks.Task _04_DeletingASkill(string deleteJsonFilePath, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "order4"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("DeleteJsonFilePath", deleteJsonFilePath);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("04 - Deleting a Skill", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 30
+#line 36
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -204,19 +228,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 31
+#line 37
 await testRunner.GivenAsync("User logs into Mars portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 32
+#line 38
 await testRunner.AndAsync("User navigates to Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 33
+#line 39
 await testRunner.AndAsync("User selects the Skill tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 34
-await testRunner.WhenAsync("User deletes a Skill record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 40
+await testRunner.WhenAsync(string.Format("User deletes a Skill record with data \"{0}\"", deleteJsonFilePath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 35
+#line 41
 await testRunner.ThenAsync("User should see a success message confirming the deleting skill", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

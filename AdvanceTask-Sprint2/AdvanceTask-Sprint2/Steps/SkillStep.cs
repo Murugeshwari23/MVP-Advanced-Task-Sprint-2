@@ -12,16 +12,15 @@ namespace AdvanceTask_Sprint2.Steps
     public class SkillStep : BaseSetup
     {
         SkillComponent skillComponentObj;
-        AddUpdateDeleteSkillComponent addUpdateDeleteSkillComponentObj;
-      
+        AddUpdateDeleteSkillComponent addUpdateDeleteSkillComponentObj;    
         public SkillStep()
         {
             skillComponentObj = new SkillComponent();
             addUpdateDeleteSkillComponentObj = new AddUpdateDeleteSkillComponent();
         }
-        public void AddSkill()
+        public void AddSkill(string AddJsonFilePath)
         { 
-            List<SkillModel> SkillModellList = JsonHelper.ReadTestDataFromJson<SkillModel>("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTask-Sprint2\\JsonDataFiles\\AddSkill.json");
+            List<SkillModel> SkillModellList = JsonHelper.ReadTestDataFromJson<SkillModel>(AddJsonFilePath);
             foreach (SkillModel skilldata in SkillModellList)
             {
                 skillComponentObj.clickAddSkill();
@@ -31,10 +30,10 @@ namespace AdvanceTask_Sprint2.Steps
                 Console.WriteLine(actualmessage);
             }
         }
-        public void UpdateSkill()
+        public void UpdateSkill(string UpdateJsonFilePath)
         {
 
-            List<SkillModel> SkillModellList = JsonHelper.ReadTestDataFromJson<SkillModel>("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTask-Sprint2\\JsonDataFiles\\UpdateSkill.json");
+            List<SkillModel> SkillModellList = JsonHelper.ReadTestDataFromJson<SkillModel>(UpdateJsonFilePath);
             foreach (SkillModel skilldata in SkillModellList)
             {
                 skillComponentObj.clickUpdateSkill();
@@ -43,9 +42,9 @@ namespace AdvanceTask_Sprint2.Steps
                 Console.WriteLine(actualmessage);
             }
         }
-        public void DeleteSkill()
+        public void DeleteSkill(string DeleteJsonFilePath)
         {
-            List<SkillModel> SkillModellList = JsonHelper.ReadTestDataFromJson<SkillModel>("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTask-Sprint2\\JsonDataFiles\\DeleteSkill.json");
+            List<SkillModel> SkillModellList = JsonHelper.ReadTestDataFromJson<SkillModel>(DeleteJsonFilePath);
             foreach (SkillModel skilldata in SkillModellList)
             {
                 addUpdateDeleteSkillComponentObj.deleteSkill(skilldata);

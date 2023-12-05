@@ -10,6 +10,8 @@ using System.Security.AccessControl;
 using AdvanceTask_Sprint2.AssertHelpers;
 
 
+
+
 namespace AdvanceTask_Sprint2.Steps
 {
     public class LanguageStep : BaseSetup
@@ -17,16 +19,14 @@ namespace AdvanceTask_Sprint2.Steps
        
         LanguageComponent languageComponentObj;
         AddUpdateDeleteLanguageComponent addUpdateDeleteLanguageComponentObj;
-        AssertionLanguage AssertionLanguageObj;
             public LanguageStep()
             {
                 languageComponentObj = new LanguageComponent();
                 addUpdateDeleteLanguageComponentObj = new AddUpdateDeleteLanguageComponent();
-            AssertionLanguageObj = new AssertionLanguage();
             }
-            public void AddLanguage()
+            public void AddLanguage(string AddJsonFilePath)
             {
-                List<LanguageModel> LanguageModelList = JsonHelper.ReadTestDataFromJson<LanguageModel>("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTask-Sprint2\\JsonDataFiles\\AddLanguage.json");
+                List<LanguageModel> LanguageModelList = JsonHelper.ReadTestDataFromJson<LanguageModel>(AddJsonFilePath);
                 foreach (LanguageModel languagedata in LanguageModelList)
                 {
                     languageComponentObj.clickAddLanguage();
@@ -36,9 +36,9 @@ namespace AdvanceTask_Sprint2.Steps
                 }
             }
        
-        public void updateLanguage()
+        public void updateLanguage(string UpdateJsonFilePath)
             {
-                List<LanguageModel> LanguageModelList = JsonHelper.ReadTestDataFromJson<LanguageModel>("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTask-Sprint2\\JsonDataFiles\\UpdateLanguage.json");
+            List<LanguageModel> LanguageModelList = JsonHelper.ReadTestDataFromJson<LanguageModel>(UpdateJsonFilePath);
                 foreach (LanguageModel languageupdatedata in LanguageModelList)
                 {
                     languageComponentObj.clickUpdateLanguage();

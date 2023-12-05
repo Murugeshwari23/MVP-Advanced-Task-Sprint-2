@@ -12,19 +12,16 @@ namespace AdvanceTask_Sprint2.StepDefinitions
     [Binding]
     public class ShareSkill_TestStepDefinitions : BaseSetup
     {
-        SignIn SignInObj;
-        ShareSkillSteps ShareSkillStepsObj;
-        LoginPage LoginPageObj;
+       
+        ShareSkillSteps ShareSkillStepsObj;     
         ProfileTabPageSteps profileTabPageStepsObj;
         ResetShareSkillState ResetShareSkillStateObj;
         ShareSkillAssertion ShareSkillAssertionObj;
         ShareSkillComponent ShareSkillComponentObj;
         public ShareSkill_TestStepDefinitions()
-        {
-            SignInObj = new SignIn();
+        {         
             ShareSkillStepsObj = new ShareSkillSteps();
             profileTabPageStepsObj = new ProfileTabPageSteps();
-            LoginPageObj = new LoginPage();
             ResetShareSkillStateObj = new ResetShareSkillState();
             ShareSkillAssertionObj = new ShareSkillAssertion();
             ShareSkillComponentObj = new ShareSkillComponent();
@@ -34,14 +31,14 @@ namespace AdvanceTask_Sprint2.StepDefinitions
         public void GivenUserSelectsTheManageListingsTab()
         {
             ResetShareSkillStateObj.ClickOnManageListing();
-            Thread.Sleep(5000);
+            Thread.Sleep(2000);
         }
 
         [When(@"User deletes the skills from the Manage Listings")]
         public void WhenUserDeletesTheSkillsFromTheManageListings()
         {
             ResetShareSkillStateObj.DeleteAllSkills();
-            Thread.Sleep(4000);
+            Thread.Sleep(2000);
             string actualmessage = ResetShareSkillStateObj.GetMessageBoxText();
             Console.WriteLine(actualmessage);
         }
@@ -57,17 +54,17 @@ namespace AdvanceTask_Sprint2.StepDefinitions
         {
             profileTabPageStepsObj.clickShareSkill();
         }
-      
-        [Then(@"User adds a new Share Skills")]
-        public void WhenUserAddsANewShareSkills()
+
+        [Then(@"User adds a new Share Skills with data ""([^""]*)""")]
+        public void ThenUserAddsANewShareSkillsWithData(string AddShareSkillJsonPath)
         {
-            ShareSkillStepsObj.AddShareSkill();
+            ShareSkillStepsObj.AddShareSkill(AddShareSkillJsonPath);
         }
 
-        [Then(@"User Updates a Skill from Manage Listings")]
-        public void WhenUserUpdatesASkillFromManageListings()
+        [Then(@"User Updates a Skill from Manage Listings with data ""([^""]*)""")]
+        public void ThenUserUpdatesASkillFromManageListingsWithData(string UpdateShareSkillJsonPath)
         {
-            ShareSkillStepsObj.UpdateShareSkill();
+            ShareSkillStepsObj.UpdateShareSkill(UpdateShareSkillJsonPath);
         }
 
     }

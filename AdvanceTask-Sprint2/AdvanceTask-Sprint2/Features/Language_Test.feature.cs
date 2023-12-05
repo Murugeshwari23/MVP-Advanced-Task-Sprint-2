@@ -112,10 +112,13 @@ await testRunner.ThenAsync("User should not be able to view the deleted language
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("02 - Add new Language")]
-        public async System.Threading.Tasks.Task _02_AddNewLanguage()
+        [NUnit.Framework.TestCaseAttribute("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTa" +
+            "sk-Sprint2\\JsonDataFiles\\AddLanguage.json", null)]
+        public async System.Threading.Tasks.Task _02_AddNewLanguage(string addJsonFilePath, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("AddJsonFilePath", addJsonFilePath);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("02 - Add new Language", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 13
 this.ScenarioInitialize(scenarioInfo);
@@ -137,7 +140,7 @@ await testRunner.AndAsync("User navigates to Profile page", ((string)(null)), ((
 await testRunner.AndAsync("User selects the Language tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 17
-await testRunner.WhenAsync("User adds a new Language record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+await testRunner.WhenAsync(string.Format("User adds a new record with language data \"{0}\"", addJsonFilePath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 18
 await testRunner.ThenAsync("Mars portal should save the new Language record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -148,12 +151,15 @@ await testRunner.ThenAsync("Mars portal should save the new Language record", ((
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("03 - Update new Language")]
-        public async System.Threading.Tasks.Task _03_UpdateNewLanguage()
+        [NUnit.Framework.TestCaseAttribute("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTa" +
+            "sk-Sprint2\\JsonDataFiles\\UpdateLanguage.json", null)]
+        public async System.Threading.Tasks.Task _03_UpdateNewLanguage(string updateJsonFilePath, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("UpdateJsonFilePath", updateJsonFilePath);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("03 - Update new Language", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 20
+#line 23
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -163,19 +169,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 21
+#line 24
 await testRunner.GivenAsync("User logs into Mars portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 22
+#line 25
 await testRunner.AndAsync("User navigates to Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 23
+#line 26
 await testRunner.AndAsync("User selects the Language tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 24
-await testRunner.WhenAsync("User Updates a new Language record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 27
+await testRunner.WhenAsync(string.Format("User Updates a new Language record with data \"{0}\"", updateJsonFilePath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 25
+#line 28
 await testRunner.ThenAsync("Mars portal should save the Updated Language record", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -189,7 +195,7 @@ await testRunner.ThenAsync("Mars portal should save the Updated Language record"
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("04 - Delete Languages from the list", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 27
+#line 33
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -199,19 +205,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 28
+#line 34
 await testRunner.GivenAsync("User logs into Mars portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 29
+#line 35
 await testRunner.AndAsync("User navigates to Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 30
+#line 36
 await testRunner.AndAsync("User selects the Language tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 31
+#line 37
 await testRunner.WhenAsync("User deletes the language records", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 32
+#line 38
 await testRunner.ThenAsync("Mars portal should successfully delete the language records", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

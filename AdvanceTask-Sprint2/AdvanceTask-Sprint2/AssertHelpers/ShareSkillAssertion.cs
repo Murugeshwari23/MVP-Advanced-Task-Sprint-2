@@ -32,7 +32,6 @@ namespace AdvanceTask_Sprint2.AssertHelpers
             string expectedTitle = updateShareSkill.title;
             Assert.AreEqual(UpdatedSkillTitle, expectedTitle, "Share skill has been Updated successfully ");
             Console.WriteLine($"Skill Title: {UpdatedSkillTitle} has been Updated sucessfully");
-
         }
         public void AssertDeletedShareSkill()
         {

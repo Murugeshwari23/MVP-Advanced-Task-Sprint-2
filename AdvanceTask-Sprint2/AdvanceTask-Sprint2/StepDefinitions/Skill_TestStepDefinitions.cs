@@ -1,6 +1,5 @@
 using AdvanceTask_Sprint2.AssertHelpers;
 using AdvanceTask_Sprint2.Components.ProfilePageTabComponents;
-using AdvanceTask_Sprint2.Pages;
 using AdvanceTask_Sprint2.Steps;
 using AdvanceTask_Sprint2.Utilities;
 using System;
@@ -9,14 +8,13 @@ using TechTalk.SpecFlow;
 namespace AdvanceTask_Sprint2.StepDefinitions
 {
     [Binding]
-    public class Skill_TestStepDefinitions : BaseSetup
+    public class Skill_TestStepDefinitions
     {
         ProfileTabPageSteps profileTabPageStepsObj;
         ResetState ResetStateObj;
         SkillStep SkillStepObj;
         SkillAssertion SkillAssertionObj;
         AddUpdateDeleteSkillComponent AddUpdateDeleteSkillComponentObj;
-
         public Skill_TestStepDefinitions()
         {
             profileTabPageStepsObj = new ProfileTabPageSteps();
@@ -37,11 +35,10 @@ namespace AdvanceTask_Sprint2.StepDefinitions
         {
             ResetStateObj.Deleterows();
         }
-
-        [When(@"User adds a new Skill record")]
-        public void WhenUserAddsANewSkillRecord()
+        [When(@"User adds a new Skill record with data ""([^""]*)""")]
+        public void WhenUserAddsANewSkillRecordWithData(string AddJsonFilePath)
         {
-            SkillStepObj.AddSkill();
+            SkillStepObj.AddSkill(AddJsonFilePath);
         }
 
         [Then(@"User should see a success message confirming the adding skill")]
@@ -50,12 +47,10 @@ namespace AdvanceTask_Sprint2.StepDefinitions
             string actualmessage = AddUpdateDeleteSkillComponentObj.GetMessageBoxText();
             SkillAssertionObj.AddSkillAssertion(" has been added to your skills", actualmessage);
         }
-
-        [When(@"User updates a Skill record")]
-        public void WhenUserUpdatesASkillRecord()
+        [When(@"User updates a Skill record  with data ""([^""]*)""")]
+        public void WhenUserUpdatesASkillRecordWithData(string UpdateJsonFilePath)
         {
-            SkillStepObj.UpdateSkill();
-
+           SkillStepObj.UpdateSkill(UpdateJsonFilePath);
         }
 
         [Then(@"User should see a success message confirming the updating skill")]
@@ -65,10 +60,10 @@ namespace AdvanceTask_Sprint2.StepDefinitions
             SkillAssertionObj.UpdatedSkillAssertion(" has been updated to your skills", actualmessage);
         }
 
-        [When(@"User deletes a Skill record")]
-        public void WhenUserDeletesASkillRecord()
+        [When(@"User deletes a Skill record with data ""([^""]*)""")]
+        public void WhenUserDeletesASkillRecordWithData(string DeleteJsonFilePath)
         {
-            SkillStepObj.DeleteSkill();
+            SkillStepObj.DeleteSkill(DeleteJsonFilePath);
         }
 
         [Then(@"User should see a success message confirming the deleting skill")]
@@ -79,3 +74,4 @@ namespace AdvanceTask_Sprint2.StepDefinitions
         }
     }
 }
+ 

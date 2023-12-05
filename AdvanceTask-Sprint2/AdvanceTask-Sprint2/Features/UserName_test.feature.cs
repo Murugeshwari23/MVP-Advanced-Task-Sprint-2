@@ -77,11 +77,19 @@ namespace AdvanceTask_Sprint2.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("01 - Edit the Users Availability Status")]
         [NUnit.Framework.CategoryAttribute("order1")]
-        public async System.Threading.Tasks.Task _01_EditTheUsersAvailabilityStatus()
+        [NUnit.Framework.TestCaseAttribute("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTa" +
+            "sk-Sprint2\\JsonDataFiles\\Availability.json", null)]
+        public async System.Threading.Tasks.Task _01_EditTheUsersAvailabilityStatus(string availabilityJsonPath, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "order1"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("AvailabilityJsonPath", availabilityJsonPath);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("01 - Edit the Users Availability Status", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 7
  this.ScenarioInitialize(scenarioInfo);
@@ -100,7 +108,7 @@ await testRunner.GivenAsync("User logs into Mars portal", ((string)(null)), ((Te
 await testRunner.AndAsync("User navigates to Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
-await testRunner.WhenAsync("User able to update the desired Availaility time", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+await testRunner.WhenAsync(string.Format("User able to update the desired Availaility time with data \"{0}\"", availabilityJsonPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 11
 await testRunner.ThenAsync("User should see a success message confirming Availability status change", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -112,13 +120,21 @@ await testRunner.ThenAsync("User should see a success message confirming Availab
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("02 - Edit the Users Hours Status")]
         [NUnit.Framework.CategoryAttribute("order2")]
-        public async System.Threading.Tasks.Task _02_EditTheUsersHoursStatus()
+        [NUnit.Framework.TestCaseAttribute("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTa" +
+            "sk-Sprint2\\JsonDataFiles\\AddHours.json", null)]
+        public async System.Threading.Tasks.Task _02_EditTheUsersHoursStatus(string addHoursJsonPath, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "order2"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("AddHoursJsonPath", addHoursJsonPath);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("02 - Edit the Users Hours Status", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 14
+#line 17
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -128,16 +144,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 15
+#line 18
 await testRunner.GivenAsync("User logs into Mars portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 16
+#line 19
 await testRunner.AndAsync("User navigates to Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 17
-await testRunner.WhenAsync("User able to update the desired Hours", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 20
+await testRunner.WhenAsync(string.Format("User able to update the desired Hours with data \"{0}\"", addHoursJsonPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 18
+#line 21
 await testRunner.ThenAsync("User should see a success message confirming Hours status change", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -147,13 +163,21 @@ await testRunner.ThenAsync("User should see a success message confirming Hours s
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("03 - Edit the Users Earn Target Status")]
         [NUnit.Framework.CategoryAttribute("order3")]
-        public async System.Threading.Tasks.Task _03_EditTheUsersEarnTargetStatus()
+        [NUnit.Framework.TestCaseAttribute("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTa" +
+            "sk-Sprint2\\JsonDataFiles\\AddTarget.json", null)]
+        public async System.Threading.Tasks.Task _03_EditTheUsersEarnTargetStatus(string addTargetJsonPath, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "order3"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("AddTargetJsonPath", addTargetJsonPath);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("03 - Edit the Users Earn Target Status", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 21
+#line 27
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -163,16 +187,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 22
+#line 28
 await testRunner.GivenAsync("User logs into Mars portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 23
+#line 29
 await testRunner.AndAsync("User navigates to Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 24
-await testRunner.WhenAsync("User able to update the desired Target", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 30
+await testRunner.WhenAsync(string.Format("User able to update the desired Target with data \"{0}\"", addTargetJsonPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 25
+#line 31
 await testRunner.ThenAsync("User should see a success message confirming Target status change", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -182,13 +206,21 @@ await testRunner.ThenAsync("User should see a success message confirming Target 
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("04 - Edit the Users First and Last Name")]
         [NUnit.Framework.CategoryAttribute("order4")]
-        public async System.Threading.Tasks.Task _04_EditTheUsersFirstAndLastName()
+        [NUnit.Framework.TestCaseAttribute("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTa" +
+            "sk-Sprint2\\JsonDataFiles\\UserFirstLastName.json", null)]
+        public async System.Threading.Tasks.Task _04_EditTheUsersFirstAndLastName(string userFirtLastNameJsonPath, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "order4"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("UserFirtLastNameJsonPath", userFirtLastNameJsonPath);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("04 - Edit the Users First and Last Name", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 28
+#line 37
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -198,14 +230,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 29
+#line 38
 await testRunner.GivenAsync("User logs into Mars portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 30
+#line 39
 await testRunner.AndAsync("User navigates to Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 31
-await testRunner.ThenAsync("User able to Edit the First and Last Name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 40
+await testRunner.ThenAsync(string.Format("User able to Edit the First and Last Name with data \"{0}\"", userFirtLastNameJsonPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

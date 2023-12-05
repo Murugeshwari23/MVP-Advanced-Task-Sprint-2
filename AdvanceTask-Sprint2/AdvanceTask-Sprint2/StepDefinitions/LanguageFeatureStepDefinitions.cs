@@ -36,7 +36,6 @@ namespace AdvanceTask_Sprint2.StepDefinitions
         public void GivenUserLogsIntoMarsPortal()
         {
             SignInObj.ClickSignIn();
-
         }
 
         [Given(@"User navigates to Profile page")]
@@ -62,24 +61,24 @@ namespace AdvanceTask_Sprint2.StepDefinitions
         {
             AssertionLanguageObj.assertDeleteLanguage();
         }
-      
-        [When(@"User adds a new Language record")]
-        public void WhenUserAddsANewLanguageRecord()
-        {
-            LanguageStepObj.AddLanguage();
+
+        [When(@"User adds a new record with language data ""([^""]*)""")]
+        public void WhenUserAddsANewRecordWithLanguageData(string AddJsonFilePath)
+        {       
+        LanguageStepObj.AddLanguage(AddJsonFilePath);
         }
 
         [Then(@"Mars portal should save the new Language record")]
         public void ThenMarsPortalShouldSaveTheNewLanguageRecord()
-        {
+        {          
             string actualmessage = addUpdateDeleteLanguageComponentObj.GetMessageBoxText();
             AssertionLanguageObj.AddLanguageAssertion (" has been added to your languages", actualmessage);
         }
 
-        [When(@"User Updates a new Language record")]
-        public void WhenUserUpdatesANewLanguageRecord()
+        [When(@"User Updates a new Language record with data ""([^""]*)""")]
+        public void WhenUserUpdatesANewLanguageRecordWithData(string UpdateJsonFilePath)
         {
-            LanguageStepObj.updateLanguage();
+            LanguageStepObj.updateLanguage(UpdateJsonFilePath);
         }
 
         [Then(@"Mars portal should save the Updated Language record")]
@@ -87,7 +86,6 @@ namespace AdvanceTask_Sprint2.StepDefinitions
         {
             string actualmessage = addUpdateDeleteLanguageComponentObj.GetMessageBoxText();
             AssertionLanguageObj.UpdatedLanguageAssertion(" has been updated to your languages", actualmessage);
-
         }
 
         [When(@"User deletes the language records")]

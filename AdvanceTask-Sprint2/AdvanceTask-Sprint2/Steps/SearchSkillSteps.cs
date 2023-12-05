@@ -6,33 +6,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MongoDB.Bson.Serialization.IdGenerators;
 
 namespace AdvanceTask_Sprint2.Steps
 {
     public class SearchSkillSteps  : BaseSetup
     {
         SearchSkillsComponent SearchSkillsComponentObj;
-    //SearchSkillAssertions SearchSkillAssertionsObj;
-    ProfileTabPageSteps ProfileTabPageStepsObj;
-
+        ProfileTabPageSteps ProfileTabPageStepsObj;
     public SearchSkillSteps()
     {
         ProfileTabPageStepsObj = new ProfileTabPageSteps();
         SearchSkillsComponentObj = new SearchSkillsComponent();
-       // SearchSkillAssertionsObj = new SearchSkillAssertions();
     }
 
-    public void SearchBySkill()
+    public void SearchBySkill(string SearchSkillJsonPath)
     {
-        List<SearchSkillModel> SearchSkillModelList = JsonHelper.ReadTestDataFromJson<SearchSkillModel>("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTask-Sprint2\\JsonDataFiles\\SearchSkill.json");
+        List<SearchSkillModel> SearchSkillModelList = JsonHelper.ReadTestDataFromJson<SearchSkillModel>(SearchSkillJsonPath);
         foreach (SearchSkillModel searchskill in SearchSkillModelList)
         {
             SearchSkillsComponentObj.SkillToBeSearched(searchskill);
         }
     }
-    public void SearchByUserName()
+    public void SearchByUserName(String SearchbyUserNameJsonPath)
     {
-        List<SearchSkillModel> SearchSkillModelList = JsonHelper.ReadTestDataFromJson<SearchSkillModel>("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTask-Sprint2\\JsonDataFiles\\SearchByUserName.json");
+        List<SearchSkillModel> SearchSkillModelList = JsonHelper.ReadTestDataFromJson<SearchSkillModel>(SearchbyUserNameJsonPath);
         foreach (SearchSkillModel searchuserskill in SearchSkillModelList)
         {
             ProfileTabPageStepsObj.clickSearchSkillIcon();
@@ -40,9 +38,9 @@ namespace AdvanceTask_Sprint2.Steps
             SearchSkillsComponentObj.SearchUser(searchuserskill);
         }
     }
-    public void SearchByCategoryclicked()
+    public void SearchByCategoryclicked(string SearchbyCategoryJsonPath)
     {
-        List<SearchSkillModel> SearchSkillModelList = JsonHelper.ReadTestDataFromJson<SearchSkillModel>("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTask-Sprint2\\JsonDataFiles\\CategoryData.json");
+        List<SearchSkillModel> SearchSkillModelList = JsonHelper.ReadTestDataFromJson<SearchSkillModel>(SearchbyCategoryJsonPath);
         foreach (SearchSkillModel categoryData in SearchSkillModelList)
         {
             ProfileTabPageStepsObj.clickSearchSkillIcon();
@@ -51,9 +49,9 @@ namespace AdvanceTask_Sprint2.Steps
             
         }
     }
-    public void SearchByFilterclicked()
+    public void SearchByFilterclicked(string SearchByFilterJsonPath)
     {
-        List<SearchSkillModel> SearchSkillModelList = JsonHelper.ReadTestDataFromJson<SearchSkillModel>("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTask-Sprint2\\JsonDataFiles\\FilterData.json");
+        List<SearchSkillModel> SearchSkillModelList = JsonHelper.ReadTestDataFromJson<SearchSkillModel>(SearchByFilterJsonPath);
         foreach (SearchSkillModel filterData in SearchSkillModelList)
         {
             ProfileTabPageStepsObj.clickSearchSkillIcon();

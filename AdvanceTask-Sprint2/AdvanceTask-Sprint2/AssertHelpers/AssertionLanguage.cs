@@ -21,7 +21,6 @@ namespace AdvanceTask_Sprint2.AssertHelpers
         public void assertDeleteLanguage()
         {
             driver.Navigate().Refresh();
-            //Wait.WaitToBeVisible(driver, "XPath", "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table", 2);
             Thread.Sleep(3000);
             int rowCount = driver.FindElements(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table//tbody")).Count;
             Assert.That(rowCount == 0, "Records Not Deleted Successfully");

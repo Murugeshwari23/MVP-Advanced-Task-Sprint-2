@@ -16,7 +16,6 @@ namespace AdvanceTask_Sprint2.Steps
         ProfileTabPageSteps profileTabPageStepsObj;
         ShareSkillComponent ShareSkillComponentObj;
         ShareSkillAssertion ShareSkillAssertionObj;
-
         public ShareSkillSteps()
         {
             ProfilePageTabsComponentsObj = new ProfilePageTabsComponents();
@@ -24,20 +23,19 @@ namespace AdvanceTask_Sprint2.Steps
             ShareSkillComponentObj = new ShareSkillComponent();
             ShareSkillAssertionObj = new ShareSkillAssertion();
         }
-        public void AddShareSkill()
+        public void AddShareSkill(string AddShareSkillJsonPath)
         {
-            List<ShareSkillModel> ShareSkillModelList = JsonHelper.ReadTestDataFromJson<ShareSkillModel>("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTask-Sprint2\\JsonDataFiles\\AddShareSkill.json");
+            List<ShareSkillModel> ShareSkillModelList = JsonHelper.ReadTestDataFromJson<ShareSkillModel>(AddShareSkillJsonPath);
             foreach (ShareSkillModel addShareSkill in ShareSkillModelList)
             {
                 ShareSkillComponentObj.AddSkill(addShareSkill);
                 ShareSkillAssertionObj.AddShareSkillAssert(addShareSkill);
-
             }
         }
-        public void UpdateShareSkill()
+        public void UpdateShareSkill(string UpdateShareSkillJsonPath)
         {
 
-            List<ShareSkillModel> ShareSkillModelList = JsonHelper.ReadTestDataFromJson<ShareSkillModel>("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTask-Sprint2\\JsonDataFiles\\UpdateShareSkill.json");
+            List<ShareSkillModel> ShareSkillModelList = JsonHelper.ReadTestDataFromJson<ShareSkillModel>(UpdateShareSkillJsonPath);
             foreach (ShareSkillModel updateShareSkill in ShareSkillModelList)
             {
                 profileTabPageStepsObj.clickUpdateShareSkillIcon();

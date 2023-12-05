@@ -23,22 +23,18 @@ namespace AdvanceTask_Sprint2.Steps
             bool isSeeAllClicked = NotificationsComponentsObj.VerifyClickSeeAll();
             NotificationAssertionObj.AssertNotificationSeeAll(isSeeAllClicked);
             Console.WriteLine("Verification is successful.");
-
         }
         public void VerifyLoadMoreButton()
-        {
-            
+        {          
             bool isLoadMoreClicked = NotificationsComponentsObj.VerifyClickLoadMore();
             NotificationAssertionObj.AssertLoadMore(isLoadMoreClicked);
         }
         public void VerifyShowLessButton()
-        {
-          
+        {     
             bool isShowLessClicked = NotificationsComponentsObj.VerifyClickShowLess();
             Thread.Sleep(3000);
             NotificationAssertionObj.AssertShowLess(isShowLessClicked);
             Console.WriteLine("Verification is successful.");
-
         }
         public void VerifySelectAllButton()
         {
@@ -57,13 +53,11 @@ namespace AdvanceTask_Sprint2.Steps
             Console.WriteLine("Verification is successful.");
         }
         public void VerifyMarkAsReadButton()
-        {
-            
+        {         
             bool isMarkSelectionAsRead = NotificationsComponentsObj.VerifyMarkSelectionAsRead();
             string actualmessage = NotificationsComponentsObj.GetMessageBoxText();
             Console.WriteLine(actualmessage);
            NotificationAssertionObj.AssertMarkAsread(isMarkSelectionAsRead);
-
         }
         public void VerifyDeleteButton()
         {

@@ -16,14 +16,20 @@ Scenario Outline: 02 - Add new Share kills
 Given User logs into Mars portal
 And User navigates to Profile page
 When User clicks on Share Skill button
-Then User adds a new Share Skills
+Then User adds a new Share Skills with data "<AddShareSkillJsonPath>"
+ Examples:
+      | AddShareSkillJsonPath                                              |
+      | C:\AdvnacedTask-Sprint-2\MVP-Advanced-Task-Sprint-2\AdvanceTask-Sprint2\AdvanceTask-Sprint2\JsonDataFiles\AddShareSkill.json|
 
 @order3
 Scenario Outline: 03 - Update Share Skills
 Given User logs into Mars portal
 And User navigates to Profile page
 And User selects the Manage Listings tab
-Then User Updates a Skill from Manage Listings
+Then User Updates a Skill from Manage Listings with data "<UpdateShareSkillJsonPath>"
+Examples:
+      | UpdateShareSkillJsonPath                                              |
+      | C:\AdvnacedTask-Sprint-2\MVP-Advanced-Task-Sprint-2\AdvanceTask-Sprint2\AdvanceTask-Sprint2\JsonDataFiles\UpdateShareSkill.json|
 
 @order4
 Scenario Outline: 04 - Delete ShareSkill from the list 

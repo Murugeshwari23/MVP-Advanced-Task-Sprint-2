@@ -1,6 +1,5 @@
 using AdvanceTask_Sprint2.AssertHelpers;
 using AdvanceTask_Sprint2.Components.ProfilePageTabComponents;
-using AdvanceTask_Sprint2.Pages;
 using AdvanceTask_Sprint2.Steps;
 using AdvanceTask_Sprint2.TestModel;
 using AdvanceTask_Sprint2.Utilities;
@@ -10,29 +9,24 @@ using TechTalk.SpecFlow;
 namespace AdvanceTask_Sprint2.StepDefinitions
 {
     [Binding]
-    public class SearchSkill_TestStepDefinitions : BaseSetup
+    public class SearchSkill_TestStepDefinitions
     {
-        SignIn SignInObj;
-        LoginPage LoginPageObj;
         SearchSkillSteps SearchSkillStepsObj;
         ProfileTabPageSteps profileTabPageStepsObj;
         SearchSkillsComponent SearchSkillsComponentObj;
         SearchSkillAssertions SearchSkillAssertionsObj;
-
         public SearchSkill_TestStepDefinitions()
         {
-            SignInObj = new SignIn();
-            LoginPageObj = new LoginPage();
             SearchSkillStepsObj = new SearchSkillSteps();
             profileTabPageStepsObj = new ProfileTabPageSteps();
             SearchSkillsComponentObj = new SearchSkillsComponent();
             SearchSkillAssertionsObj = new SearchSkillAssertions();
         }
 
-        [When(@"User searches for skills")]
-        public void WhenUserSearchesForSkills()
+        [When(@"User searches for skills with data ""([^""]*)""")]
+        public void WhenUserSearchesForSkillsWithData(string SearchSkillJsonPath)
         {
-            SearchSkillStepsObj.SearchBySkill();
+            SearchSkillStepsObj.SearchBySkill(SearchSkillJsonPath);
             Thread.Sleep(5000);
         }
 
@@ -41,16 +35,15 @@ namespace AdvanceTask_Sprint2.StepDefinitions
         {
             List<SearchSkillModel> SearchSkillModelList = JsonHelper.ReadTestDataFromJson<SearchSkillModel>("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTask-Sprint2\\JsonDataFiles\\SearchSkill.json");
             foreach (SearchSkillModel searchskill in SearchSkillModelList)
-            {
-               
+            {              
               SearchSkillAssertionsObj.SearchSkillAssert(searchskill);
             }
         }
 
-        [When(@"User searches by Usernames")]
-        public void WhenUserSearchesByUsernames()
+        [When(@"User searches by Usernames with data ""([^""]*)""")]
+        public void WhenUserSearchesByUsernamesWithData(string SearchbyUserNameJsonPath)
         {
-            SearchSkillStepsObj.SearchByUserName();
+            SearchSkillStepsObj.SearchByUserName(SearchbyUserNameJsonPath);
             Thread.Sleep(4000);
         }
 
@@ -59,15 +52,16 @@ namespace AdvanceTask_Sprint2.StepDefinitions
         {
             List<SearchSkillModel> SearchSkillModelList = JsonHelper.ReadTestDataFromJson<SearchSkillModel>("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTask-Sprint2\\JsonDataFiles\\SearchByUserName.json");
             foreach (SearchSkillModel searchuserskill in SearchSkillModelList)
-            {           
+            {
                 SearchSkillAssertionsObj.SearchUserNameAssert(searchuserskill);
             }
         }
 
-        [When(@"User searches by Category")]
-        public void WhenUserSearchesByCategory()
+
+        [When(@"User searches by Category with data ""([^""]*)""")]
+        public void WhenUserSearchesByCategoryWithData(string SearchbyCategoryJsonPath)
         {
-            SearchSkillStepsObj.SearchByCategoryclicked();
+            SearchSkillStepsObj.SearchByCategoryclicked(SearchbyCategoryJsonPath);
             Thread.Sleep(4000);
         }
 
@@ -78,15 +72,15 @@ namespace AdvanceTask_Sprint2.StepDefinitions
             List<SearchSkillModel> SearchSkillModelList = JsonHelper.ReadTestDataFromJson<SearchSkillModel>("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTask-Sprint2\\JsonDataFiles\\CategoryData.json");
             foreach (SearchSkillModel categoryData in SearchSkillModelList)
             {
-                
-               SearchSkillAssertionsObj.SearchCategoryAssert(categoryData);
+
+                SearchSkillAssertionsObj.SearchCategoryAssert(categoryData);
             }
         }
 
-        [When(@"User searches using filters")]
-        public void WhenUserSearchesUsingFilters()
+        [When(@"User searches using filters with data ""([^""]*)""")]
+        public void WhenUserSearchesUsingFiltersWithData(string SearchByFilterJsonPath)
         {
-            SearchSkillStepsObj.SearchByFilterclicked();
+            SearchSkillStepsObj.SearchByFilterclicked(SearchByFilterJsonPath);
             Thread.Sleep(4000);
         }
 
@@ -96,8 +90,9 @@ namespace AdvanceTask_Sprint2.StepDefinitions
             List<SearchSkillModel> SearchSkillModelList = JsonHelper.ReadTestDataFromJson<SearchSkillModel>("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTask-Sprint2\\JsonDataFiles\\FilterData.json");
             foreach (SearchSkillModel filterData in SearchSkillModelList)
             {
-               SearchSkillAssertionsObj.SearchFilterAssert(filterData);
+                SearchSkillAssertionsObj.SearchFilterAssert(filterData);
             }
         }
     }
 }
+

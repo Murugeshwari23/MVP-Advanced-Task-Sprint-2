@@ -77,11 +77,19 @@ namespace AdvanceTask_Sprint2.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("01 - Verify User able to Serach by Skill Name")]
         [NUnit.Framework.CategoryAttribute("order1")]
-        public async System.Threading.Tasks.Task _01_VerifyUserAbleToSerachBySkillName()
+        [NUnit.Framework.TestCaseAttribute("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTa" +
+            "sk-Sprint2\\JsonDataFiles\\SearchSkill.json", null)]
+        public async System.Threading.Tasks.Task _01_VerifyUserAbleToSerachBySkillName(string searchSkillJsonPath, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "order1"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("SearchSkillJsonPath", searchSkillJsonPath);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("01 - Verify User able to Serach by Skill Name", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 7
 this.ScenarioInitialize(scenarioInfo);
@@ -100,7 +108,7 @@ await testRunner.GivenAsync("User logs into Mars portal", ((string)(null)), ((Te
 await testRunner.AndAsync("User navigates to Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
-await testRunner.WhenAsync("User searches for skills", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+await testRunner.WhenAsync(string.Format("User searches for skills with data \"{0}\"", searchSkillJsonPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 11
 await testRunner.ThenAsync("User should be able to see a list of skills related to the search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -112,13 +120,21 @@ await testRunner.ThenAsync("User should be able to see a list of skills related 
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("02 - Verify User able to Serach by User Name")]
         [NUnit.Framework.CategoryAttribute("order2")]
-        public async System.Threading.Tasks.Task _02_VerifyUserAbleToSerachByUserName()
+        [NUnit.Framework.TestCaseAttribute("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTa" +
+            "sk-Sprint2\\JsonDataFiles\\SearchByUserName.json", null)]
+        public async System.Threading.Tasks.Task _02_VerifyUserAbleToSerachByUserName(string searchbyUserNameJsonPath, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "order2"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("SearchbyUserNameJsonPath", searchbyUserNameJsonPath);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("02 - Verify User able to Serach by User Name", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 14
+#line 18
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -128,16 +144,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 15
+#line 19
 await testRunner.GivenAsync("User logs into Mars portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 16
+#line 20
 await testRunner.AndAsync("User navigates to Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 17
-await testRunner.WhenAsync("User searches by Usernames", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 21
+await testRunner.WhenAsync(string.Format("User searches by Usernames with data \"{0}\"", searchbyUserNameJsonPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 18
+#line 22
 await testRunner.ThenAsync("User should see a list of users with matching usernames", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -147,13 +163,21 @@ await testRunner.ThenAsync("User should see a list of users with matching userna
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("03 - Verify User able to Serach by Category")]
         [NUnit.Framework.CategoryAttribute("order3")]
-        public async System.Threading.Tasks.Task _03_VerifyUserAbleToSerachByCategory()
+        [NUnit.Framework.TestCaseAttribute("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTa" +
+            "sk-Sprint2\\JsonDataFiles\\CategoryData.json", null)]
+        public async System.Threading.Tasks.Task _03_VerifyUserAbleToSerachByCategory(string searchbyCategoryJsonPath, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "order3"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("SearchbyCategoryJsonPath", searchbyCategoryJsonPath);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("03 - Verify User able to Serach by Category", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 21
+#line 29
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -163,16 +187,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 22
+#line 30
 await testRunner.GivenAsync("User logs into Mars portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 23
+#line 31
 await testRunner.AndAsync("User navigates to Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 24
-await testRunner.WhenAsync("User searches by Category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 32
+await testRunner.WhenAsync(string.Format("User searches by Category with data \"{0}\"", searchbyCategoryJsonPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 25
+#line 33
 await testRunner.ThenAsync("User should see a list of skills in that category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -182,13 +206,21 @@ await testRunner.ThenAsync("User should see a list of skills in that category", 
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("04 - Verify User able to Serach by using Filter option")]
         [NUnit.Framework.CategoryAttribute("order4")]
-        public async System.Threading.Tasks.Task _04_VerifyUserAbleToSerachByUsingFilterOption()
+        [NUnit.Framework.TestCaseAttribute("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTa" +
+            "sk-Sprint2\\JsonDataFiles\\FilterData.json", null)]
+        public async System.Threading.Tasks.Task _04_VerifyUserAbleToSerachByUsingFilterOption(string searchByFilterJsonPath, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "order4"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("SearchByFilterJsonPath", searchByFilterJsonPath);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("04 - Verify User able to Serach by using Filter option", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 28
+#line 40
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -198,16 +230,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 29
+#line 41
 await testRunner.GivenAsync("User logs into Mars portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 30
+#line 42
 await testRunner.AndAsync("User navigates to Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 31
-await testRunner.WhenAsync("User searches using filters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 43
+await testRunner.WhenAsync(string.Format("User searches using filters with data \"{0}\"", searchByFilterJsonPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 32
+#line 44
 await testRunner.ThenAsync("User should see a refined list based on the applied filters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

@@ -16,7 +16,6 @@ namespace AdvanceTask_Sprint2.AssertHelpers
         {
             Assert.IsTrue(actual.Contains(expected), $"Expected message: '{expected}' was not found in the actual message: '{actual}'");
         }
-
         public void HoursAssertion(string expected, string actual)
         {
             Assert.IsTrue(actual.Contains(expected), $"Expected message: '{expected}' was not found in the actual message: '{actual}'");
@@ -25,7 +24,6 @@ namespace AdvanceTask_Sprint2.AssertHelpers
         {
             Assert.IsTrue(actual.Contains(expected), $"Expected message: '{expected}' was not found in the actual message: '{actual}'");
         }
-
         public void AssertFirstName(UserNameModel username)
         {
             IWebElement FirstName = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/div[1]/div[2]/div/span"));
@@ -35,5 +33,4 @@ namespace AdvanceTask_Sprint2.AssertHelpers
             Assert.That(actualFirstName, Is.EqualTo(expectedName));
         }
     }
-
 }

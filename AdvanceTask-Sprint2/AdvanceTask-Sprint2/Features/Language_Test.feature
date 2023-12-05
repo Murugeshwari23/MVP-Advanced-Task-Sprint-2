@@ -14,15 +14,21 @@ Scenario Outline: 02 - Add new Language
 Given User logs into Mars portal
 And User navigates to Profile page
 And User selects the Language tab
-When User adds a new Language record
-Then Mars portal should save the new Language record
+When User adds a new record with language data "<AddJsonFilePath>"
+Then Mars portal should save the new Language record 
+ Examples:
+      | AddJsonFilePath                                                                                                           |
+      | C:\AdvnacedTask-Sprint-2\MVP-Advanced-Task-Sprint-2\AdvanceTask-Sprint2\AdvanceTask-Sprint2\JsonDataFiles\AddLanguage.json|
 
 Scenario Outline: 03 - Update new Language
 Given User logs into Mars portal
 And User navigates to Profile page
 And User selects the Language tab
-When User Updates a new Language record
+When User Updates a new Language record with data "<UpdateJsonFilePath>"
 Then Mars portal should save the Updated Language record
+ Examples:
+      | UpdateJsonFilePath                                                  |
+      | C:\AdvnacedTask-Sprint-2\MVP-Advanced-Task-Sprint-2\AdvanceTask-Sprint2\AdvanceTask-Sprint2\JsonDataFiles\UpdateLanguage.json|
 
 Scenario Outline: 04 - Delete Languages from the list 
 Given User logs into Mars portal

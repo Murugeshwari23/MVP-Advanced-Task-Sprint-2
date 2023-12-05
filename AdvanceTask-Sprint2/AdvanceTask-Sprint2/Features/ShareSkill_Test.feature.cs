@@ -115,11 +115,19 @@ await testRunner.ThenAsync("User should see a deleted success message confirming
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("02 - Add new Share kills")]
         [NUnit.Framework.CategoryAttribute("order2")]
-        public async System.Threading.Tasks.Task _02_AddNewShareKills()
+        [NUnit.Framework.TestCaseAttribute("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTa" +
+            "sk-Sprint2\\JsonDataFiles\\AddShareSkill.json", null)]
+        public async System.Threading.Tasks.Task _02_AddNewShareKills(string addShareSkillJsonPath, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "order2"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("AddShareSkillJsonPath", addShareSkillJsonPath);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("02 - Add new Share kills", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 15
 this.ScenarioInitialize(scenarioInfo);
@@ -141,7 +149,7 @@ await testRunner.AndAsync("User navigates to Profile page", ((string)(null)), ((
 await testRunner.WhenAsync("User clicks on Share Skill button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 19
-await testRunner.ThenAsync("User adds a new Share Skills", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+await testRunner.ThenAsync(string.Format("User adds a new Share Skills with data \"{0}\"", addShareSkillJsonPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -150,13 +158,21 @@ await testRunner.ThenAsync("User adds a new Share Skills", ((string)(null)), ((T
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("03 - Update Share Skills")]
         [NUnit.Framework.CategoryAttribute("order3")]
-        public async System.Threading.Tasks.Task _03_UpdateShareSkills()
+        [NUnit.Framework.TestCaseAttribute("C:\\AdvnacedTask-Sprint-2\\MVP-Advanced-Task-Sprint-2\\AdvanceTask-Sprint2\\AdvanceTa" +
+            "sk-Sprint2\\JsonDataFiles\\UpdateShareSkill.json", null)]
+        public async System.Threading.Tasks.Task _03_UpdateShareSkills(string updateShareSkillJsonPath, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "order3"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("UpdateShareSkillJsonPath", updateShareSkillJsonPath);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("03 - Update Share Skills", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 22
+#line 25
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -166,17 +182,17 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 23
+#line 26
 await testRunner.GivenAsync("User logs into Mars portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 24
+#line 27
 await testRunner.AndAsync("User navigates to Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 25
+#line 28
 await testRunner.AndAsync("User selects the Manage Listings tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 26
-await testRunner.ThenAsync("User Updates a Skill from Manage Listings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 29
+await testRunner.ThenAsync(string.Format("User Updates a Skill from Manage Listings with data \"{0}\"", updateShareSkillJsonPath), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -191,7 +207,7 @@ await testRunner.ThenAsync("User Updates a Skill from Manage Listings", ((string
                     "order4"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("04 - Delete ShareSkill from the list", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 29
+#line 35
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -201,19 +217,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 30
+#line 36
 await testRunner.GivenAsync("User logs into Mars portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 31
+#line 37
 await testRunner.AndAsync("User navigates to Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 32
+#line 38
 await testRunner.AndAsync("User selects the Manage Listings tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 33
+#line 39
 await testRunner.WhenAsync("User deletes the skills from the Manage Listings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 34
+#line 40
 await testRunner.ThenAsync("User should see a deleted success message confirming the deletion", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
