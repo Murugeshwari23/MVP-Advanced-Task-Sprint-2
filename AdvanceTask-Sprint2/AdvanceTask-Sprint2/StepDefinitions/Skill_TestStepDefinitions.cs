@@ -33,7 +33,7 @@ namespace AdvanceTask_Sprint2.StepDefinitions
         [When(@"User deletes all the skill records")]
         public void WhenUserDeletesAllTheSkillRecords()
         {
-            ResetStateObj.Deleterows();
+            ResetStateObj.DeleteRows();
         }
         [When(@"User adds a new Skill record with data ""([^""]*)""")]
         public void WhenUserAddsANewSkillRecordWithData(string AddJsonFilePath)

@@ -51,17 +51,9 @@ namespace AdvanceTask_Sprint2.Utilities
 
         [TearDown]
         public void TearDownActions()
-        {
-
-            {
-                //if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Passed)
-                //{
-                //    CaptureScreenshot(TestContext.CurrentContext.Test.Name + "_Pass");
-                //}
+        {         
                 test.Log(Status.Pass, "Test Passed");
                 Close();
-            }
-
         }
 
         [OneTimeTearDown]
